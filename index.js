@@ -12,6 +12,8 @@ app.get("/todos", async function (req, res) {
   res.json({ allTodos });
 });
 
+app.use(cors());
+
 //return all the todos from db
 app.post("/todos", function (req, res) {
   const userInput = req.body;
