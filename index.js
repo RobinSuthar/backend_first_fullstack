@@ -12,7 +12,7 @@ app.get("/todos", async function (req, res) {
   res.json({ allTodos });
 });
 
-app.use(cors("http://localhost:5173/"));
+app.use(cors({origin:"http://localhost:5173/",}));
 
 //return all the todos from db
 app.post("/todos", function (req, res) {
