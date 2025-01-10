@@ -4,7 +4,7 @@ import { mySchema, mySchemaId } from "./types.js";
 import DataBaseSchema from "./db.js";
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.get("/todos", async function (req, res) {
@@ -12,7 +12,7 @@ app.get("/todos", async function (req, res) {
   res.json({ allTodos });
 });
 
-app.use(cors({origin:"http://localhost:5173/",}));
+
 
 //return all the todos from db
 app.post("/todos", function (req, res) {
